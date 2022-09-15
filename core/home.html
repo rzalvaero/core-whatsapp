@@ -1,72 +1,122 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en" >
+  <head>
     <title>REY - WA Lightweight</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="Whatsapp API" />
-    <meta property="og:description" content="Whatsapp API Library v4 Baileys" />
-    <meta property="og:image" content="https://shop.arfi.tech/assets/shop.png" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-dark.min.css">
-</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Whatsapp Lightweight" />
+    <meta property="og:description" content="Whatsapp API Lightweight from Library v4 Baileys" />
+    <meta name="description" content="Whatsapp API Lightweight from Library v4 Baileys">
+	<meta name="author" content="reza alvaero">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Bulma Version 0.9.0-->
+    <link rel='stylesheet' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link rel='stylesheet' href='https://kingsora.github.io/OverlayScrollbars/etc/os-theme-thin-dark.css'>	  
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js">
+    <link rel="stylesheet" href="https://bulmatemplates.github.io/bulma-templates/css/cheatsheet.css">
+    <script src="https://kit.fontawesome.com/7dc3015a44.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column is-12">
+            <div class="container content">
+              <i class="is-large fab fa-discord"></i>
+              <i class="is-large fas fa-code"></i>
+              <h1 class="title">Whatsapp <em>Lightweight</em></h1>
+              <h3 class="subtitle">
+              Collection of code goodies for next-level dev
+              </h3>
+              <a href="/device" target="_blank" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fa fa-code"></i>
+                </span>
+                <span>Sync</span>
+              </a>
+			  <a href="https://github.com/rzalvaero" target="_blank" class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Github</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3">
+            <aside class="is-medium menu">
+          <p class="menu-label">
+            Example
+          </p>
+          <ul class="menu-list">
+            <li class="is-right"><a href="#api" class="is-active"><i class="fa fa-code"></i> API</a></li>
+            <li><a href="#let" class="is-active"><i class="fa fa-code"></i> Parameter</a></li>
+            <li><a href="https://reza-alvaero.com" target="_blank" class="is-active"><i class="fa fa-code"></i> Author</a></li>
+          </ul>
+            </aside>
+          </div>
+          <div class="column is-9">
+            <div class="content is-medium">
+          <h3 class="title is-3">¯\_(ツ)_/¯ Send ur notification so easy!</h3>
+            <div class="box">
+                <h4 id="api" class="title is-3">Doc API</h4>
+                <article class="message is-primary">
+                  <span class="icon has-text-primary">
+                  <i class="fab fa-js"></i>
+                  </span>
+                  <div class="message-body">
+                    Simple send Request<br/>
+					<div class="control">
+					<div class="tags has-addons">
+					  <span class="tag is-dark"><span class="uri"></span>send</span>
+					  <span class="tag has-addons is-warning">POST <i class="fab fa-lg fa-codepen"></i></span>
+					</div>
+					</div>
+                  </div>
+                </article>
+				<pre style="color:#f14668; font-size:12px;background-color:black;"><code class="language-javascript">
+&lt;?php		
+$curl =curl_init();
+$data = [
+'number' => '628xxx',// number sender
+'type' => 'chat',// type delivery
+'message' => 'try message 1',// message content
+'to' => ["628xxx","628xxx"], // number receiver
+];
 
-<body>
+curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data) );
+curl_setopt($curl, CURLOPT_URL, '<span class="uri"></span>send');
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json','Content-Type: application/json']);
 
-    <div class="container py-5">
-        <h4>WA Lightweight</h4>
-        <p>visit to <a href="/device" target="_blank">Try </a>:</p>
-        <hr>
-        <p class="h4">DOC API</p>
+$result = curl_exec($curl);
+curl_close($curl);
 
-        <div class="row">
-            <div class="col-12">
-                <div id="send-message" class="section-block">
-                    <h5 class="block-title">Send Whatsapp Message</h3>
-                        <p style="line-height:1.5">Send a message to a new or existing chat. This function serves to
-                            send messages to the user</p>
-                        <code class="btn btn-dark" style="font-size: 0.8rem;">
-                                    <span class="label label-primary" style="position: relative;padding: 0.2rem;margin-right: 5px;background-color: #428bca;">POST</span><span class="uri"></span>send
-                        </code>
-                        <br>
-                        <div class="code-block">
-                            <pre class=" language-php"
-                                style="background: black;margin-bottom: 30px;margin-top: 30px;overflow: auto;"><code class=" language-php"><span class="token php"><span class="token delimiter">&lt;?php</span>
-<span class="token variable">$curl</span> <span class="token operator">=</span><span class="token function">curl_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'number'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'6281xxx'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">// number sender</span>
-<span class="token string">'type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'chat'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">// type delivery</span>
-<span class="token string">'message'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'try message 1'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">// message content</span>
-<span class="token string">'to'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">["628552xxx","62852xxxx"]</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// number receiver</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_CUSTOMREQUEST</span><span class="token punctuation">,</span> <span class="token string">"POST"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_RETURNTRANSFER</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_POSTFIELDS</span><span class="token punctuation">,</span> <span class="token function">json_encode</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_URL</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">'<span class="uri"></span>send'<span class="token punctuation">);</span></span>
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_SSL_VERIFYHOST</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_SSL_VERIFYPEER</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_HTTPHEADER</span><span class="token punctuation">,</span> ['Accept: application/json','Content-Type: application/json']);</span>
-
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">curl_exec</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">curl_close</span><span class="token punctuation">(</span><span class="token variable">$curl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">echo</span> "<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span></span>"<span class="token punctuation">;</span>
-<span class="token function">print_r</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token delimiter">?&gt;</span></span></code>
-                                </pre>
-                        </div>
-                        <hr>
-                        <h6>Request parameters:</h6>
-                        <div class="table-responsive">
+print_r($result);
+?&gt;
+				</code></pre>
+            </div>
+			
+			<div class="box">
+                <h4 id="let" class="title is-3">Request Parameter</h4>
+                        <div class="table-responsive" style="font-size: 12px;font-family: cursive;">
                             <table class="table">
                                 <tbody>
                                     <tr>
                                         <th scope="row">number</th>
                                         <td>Required</td>
                                         <td>sender phone number. You can use the country code prefix . Example:
-                                            6281223xxxx</td>
+                                            628xxx</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">type</th>
@@ -86,22 +136,159 @@
                                         <th scope="row">to</th>
                                         <td>Required</td>
                                         <td>receiver phone number. You can use the country code prefix . Example:
-                                            6281223xxxx</td>
+                                            628xxx</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-
-                </div>
             </div>
-        </div>
-
-
+           
+      </div>
     </div>
+  </div>
+</div>
+</section>
+<footer class="footer">
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <article class="notification media has-background-white">
+          <figure class="media-left">
+            <span class="icon">
+              <i class="has-text-warning fas fa-columns fa-lg"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-size-4">Fastest</h1>
+              <p class="is-size-5 subtitle">
+                The power of <strong>Whatsapp Lightweight</strong> in a simple interface
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="column is-one-third">
+        <article class="notification has-background-white media">
+          <figure class="media-left">
+            <span class="icon has-text-info">
+              <i class="fab fa-lg fa-wpforms"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-size-4">Form</h1>
+              <p class="is-size-5 subtitle">
+                The indispensable <strong>form controls</strong>, designed for maximum clarity
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="column is-one-third">
+        <article class="notification has-background-white media">
+          <figure class="media-left">
+            <span class="icon has-text-danger">
+              <i class="fas fa-lg fa-cubes"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-size-4">Components</h1>
+              <p class="is-size-5 subtitle">
+                Advanced multi-part components with lots of possibilities
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="column is-one-third">
+        <article class="notification has-background-white media">
+          <figure class="media-left">
+            <span class="icon has-text-grey">
+              <i class="fas fa-lg fa-cogs"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-size-4">Modifiers</h1>
+              <p class="is-size-5 subtitle">
+                An <strong>easy-to-read</strong> naming system designed for humans
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="column is-one-third">
+        <article class="notification has-background-white media">
+          <figure class="media-left">
+            <span class="icon has-text-primary">
+              <i class="fas fa-lg fa-warehouse"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-size-4">Layout</h1>
+              <p class="is-size-5 subtitle">
+                Design the <strong>structure</strong> of your webpage with these CSS classes
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="column is-one-third">
+        <article class="notification has-background-white media">
+          <figure class="media-left">
+            <span class="icon has-text-danger">
+              <i class="fas fa-lg fa-cube"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h1 class="title is-size-4">Elements</h1>
+              <p class="is-size-5 subtitle">
+                Essential interface elements that only require a <strong>single CSS class</strong>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<div class="columns is-mobile is-centered">
+  <div class="control">
+    <div class="tags has-addons">
+      <span class="tag is-dark">Reza Alvaero</span>
+      <span class="tag has-addons is-warning"><a href="https://reza-alvaero.com"><i class="fab fa-lg fa-codepen"></i></a></span>
+    </div>
+  </div>
+</div>
+</div>
 
-</body>
-
+</footer>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>  
+    
 <script>
+	window.addEventListener('resize', () => {
+	  const divs = document.querySelectorAll(".menu-list");
+	  if (window.innerWidth < 768){
+		divs.forEach(div => div.classList.add("tags"));
+	  }
+	  else {
+		divs.forEach(div => div.classList.remove("tags"));
+	  }
+	});
+	  
+	document.addEventListener("DOMContentLoaded", function() {
+		//The first argument are the elements to which the plugin shall be initialized
+		//The second argument has to be at least a empty object or a object with your desired options
+		OverlayScrollbars(document.querySelectorAll("body"), { });
+	});
+  
     const url = window.location.href;
     const n = document.getElementsByClassName("uri").length;
 
@@ -109,6 +296,6 @@
         document.getElementsByClassName("uri")[i].textContent = url;
     }
 
-</script>
-
+</script> 
+</body>
 </html>
