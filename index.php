@@ -1,10 +1,10 @@
 <?php
 $curl = curl_init();
 $data = [
-"number" => "6285640431181",// number sender
+"number" => "NUMBER",// number sender
 "message" => "tes",
-"type" => "button", // type delivery            
-"to" => ["6285226061579"], // number receiver
+"type" => "chat", // type delivery            
+"to" => ["NUMBER"], // number receiver
 ];
 
 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
