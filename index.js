@@ -8,7 +8,7 @@ process.setMaxListeners(0);
 const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
-const port = 9000;
+const port = 2222;
 const fs = require("fs");
 const qrcode = require("qrcode");
 const pino = require("pino");
@@ -23,7 +23,7 @@ const io = socketIO(server);
 // config cors
 // const io = require("socket.io")(server, {
 //   cors: {
-//     origin: "https://stiker-label.com",
+//     origin: "https://reza-alvaero.com",
 //     methods: ["GET", "POST"],
 //     credentials: true,
 //   },
