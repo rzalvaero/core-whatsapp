@@ -4,7 +4,7 @@
 # Install
 - npm install
 - npm install forever
-- npm forever start
+- npm start forever
 
 chcek browser localhost:2222
 # Note
